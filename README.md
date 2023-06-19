@@ -1,6 +1,6 @@
-# tamplate
+# xy-map
 
-react-tamplate
+xy-map module
 
 # start
 
