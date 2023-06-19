@@ -6,7 +6,9 @@ import styles from './index.less';
 export default function LoginPage() {
 
   const onFinish = (values: any) => {
-    console.log('Received values of form: ', values);
+    if (values.username === 'root' && values.password === '123456') {
+      console.log("登录成功")
+    }
   };
 
   return (
