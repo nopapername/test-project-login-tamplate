@@ -1,1 +1,1 @@
-export { debounceFun, debounceFunLazyly, initRem, setTitle } from './util';
+export { debounceFun, debounceFunLazyly, initRem, setTitle, getLocalStorage, setLocalStorage, clearLocalStorage } from './util';

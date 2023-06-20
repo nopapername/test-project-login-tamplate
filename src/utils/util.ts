@@ -1,6 +1,35 @@
 import _compact from 'lodash/compact';
 import debounce from 'lodash/debounce';
 
+export function getLocalStorage(key: string) {
+  try {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Error retrieving from localStorage:', error);
+    return null;
+  }
+}
+
+export function setLocalStorage(key: string, value: any) {
+  try {
+    const serializedValue = JSON.stringify(value);
+    localStorage.setItem(key, serializedValue);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Error storing to localStorage:', error);
+  }
+}
+
+export function clearLocalStorage() {
+  try {
+    localStorage.clear();
+  } catch (error) {
+    console.error('Error clearing localStorage:', error);
+  }
+}
+
 /** 一般场景的防抖操作，先进行延时阻止，再进行操作 */
 export const debounceFunLazyly = debounce((fn) => {
   fn && fn();
